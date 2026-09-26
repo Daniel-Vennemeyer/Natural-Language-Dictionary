@@ -1,4 +1,4 @@
-"""Frozen-everything NLD: learn ONLY K soft concept prompts through the frozen judge.
+"""Natural Language Dictionary: learn ONLY K soft concept prompts through the frozen judge.
 
 Nothing is finetuned -- no LoRA, no policy LM, no judge updates. The ONLY trainable parameters
 are K soft prompts E [K, n_tokens, d] sitting in the judge's concept slot. Training is plain
