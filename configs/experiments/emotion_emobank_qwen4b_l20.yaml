@@ -1,0 +1,72 @@
+activation_cache_dir: /scratch/mech-taxonomy/activations
+behavior:
+  eval_data_dirs: {}
+  eval_datasets: []
+  family: emotion
+  max_eval_examples: 200
+  max_train_examples: null
+  train_data_dir: src/taxonomy_discovery/datasets/emotion/emobank.csv
+  train_dataset: emobank
+evaluation:
+  judge_metrics:
+  - positivity
+  name: emotion
+  use_loaded_llm: false
+experiment_name: emotion_emobank_qwen4b_l20
+interpretability:
+  enabled: false
+intervention:
+  alphas:
+  - -2
+  - -1
+  - -0.5
+  - 0.5
+  - 1
+  - 2
+  batch_size: 8
+  generation_do_sample: false
+  generation_max_new_tokens: 256
+  generation_temperature: 0.0
+  include_unsteered_baseline: true
+judge:
+  api_key_env: AZURE_DEEPSEEK_V4_FLASH_API_KEY
+  base_url: https://YOUR-AZURE-RESOURCE.services.ai.azure.com/openai/v1/
+  deployment: DeepSeek-V4-Flash
+  provider: azure_deepseek_v4_flash
+method:
+  cap: 128
+  device: cuda
+  embedder_backend: target_model
+  embedder_layer: 20
+  embedder_remove_topk: 1
+  epochs: 100
+  heldout_frac: 0.5
+  judge_chunk: 16
+  judge_workers: 128
+  min_pos: 30
+  name: grounded_sparse_decomposition
+  presence_cache: outputs/caches/sentence_judge_ratings/emobank_resp_bank1024.json
+  presence_source: judge_rating
+  present_tau: 0.5
+  ridge_lambda: 0.01
+  seed: 0
+  top_k: 8
+  vocab_size: 1024
+  vocab_source: extract
+metrics:
+  eps: 0.001
+  report_marginality: false
+model:
+  batch_size: 8
+  device: cuda
+  dtype: bfloat16
+  hidden_size: 2560
+  layer: 20
+  max_length: 2048
+  name: Qwen/Qwen3-4B-Instruct-2507
+  normalize: false
+  stream: resid_post
+  token_selector: last_non_padding_token
+  trust_remote_code: false
+output_root: /scratch/mech-taxonomy/runs
+seed: 0

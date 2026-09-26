@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "taxonomy_discovery"
+version = "0.1.0"
+description = "Mechanistic taxonomy discovery for LLM behaviors"
+dependencies = [
+    "numpy",
+    "torch",
+    "transformers",
+    "datasets",
+    "pyyaml",
+    "scikit-learn",
+    "openai",
+    "matplotlib",
+    "vaderSentiment",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,41 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.so
+
+# Test and tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+.env
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
+
+# Generated artifacts — everything produced by a run lives under outputs/
+# Layout:
+#   outputs/runs/                experiment run bundles (run_experiment.py)
+#   outputs/logs/                slurm stdout/stderr
+#   outputs/caches/activations/  activation caches
+#   outputs/taxonomies/          top-down pipeline A+B outputs
+#   outputs/artifacts/           per-method probe checkpoints (reft, reft_v2, reft_r1)
+# `data/` is reserved for input datasets only and is NOT gitignored.
+outputs/
+!outputs/**/summary.json
+!outputs/**/leaderboard.jsonl
