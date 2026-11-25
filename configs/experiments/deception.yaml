@@ -1,0 +1,15 @@
+behavior:
+  eval_data_dirs: {}
+  family: deception
+  train_data_dir: data/roleplaying.yaml
+  train_dataset: deception_roleplay
+evaluation:
+  judge_metrics:
+  - deceptiveness
+  name: deception
+  use_loaded_llm: false
+model:
+  dtype: bfloat16
+  layer: 20
+  name: Qwen/Qwen3-4B-Instruct-2507
+  stream: resid_post

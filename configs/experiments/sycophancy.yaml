@@ -1,0 +1,18 @@
+behavior:
+  eval_data_dirs:
+    aita: data/AITA-YTA.csv
+  family: sycophancy
+  train_data_dir: data/OEQ_prompts.csv
+  train_dataset: oeq
+evaluation:
+  judge_metrics:
+  - validation
+  - indirectness
+  - framing
+  name: sycophancy
+  use_loaded_llm: false
+model:
+  dtype: bfloat16
+  layer: 20
+  name: Qwen/Qwen3-4B-Instruct-2507
+  stream: resid_post

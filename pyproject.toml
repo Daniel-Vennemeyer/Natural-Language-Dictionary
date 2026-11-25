@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "natural-language-dictionary"
+version = "0.1.0"
+description = "Natural Language Dictionaries for LLM behaviors"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "accelerate",
+    "numpy",
+    "torch",
+    "transformers",
+    "datasets",
+    "pyyaml",
+    "scikit-learn",
+    "scipy",
+    "tqdm",
+    "openai",
+    "vaderSentiment",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

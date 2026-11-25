@@ -1,0 +1,15 @@
+behavior:
+  eval_data_dirs: {}
+  family: emotion
+  train_data_dir: data/emobank.csv
+  train_dataset: emobank
+evaluation:
+  judge_metrics:
+  - positivity
+  name: emotion
+  use_loaded_llm: false
+model:
+  dtype: bfloat16
+  layer: 20
+  name: Qwen/Qwen3-4B-Instruct-2507
+  stream: resid_post
